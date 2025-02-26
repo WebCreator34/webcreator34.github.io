@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Trade Tracker</h1>
+    <form id="tradeForm">
+        <input type="date" id="tradeDate" required>
+        <input type="text" id="asset" placeholder="Asset (e.g., BTC, TSLA)" required>
+        <select id="tradeType" required>
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+        </select>
+        <input type="number" id="price" placeholder="Price" step="0.01" required>
+        <input type="number" id="quantity" placeholder="Quantity" step="0.001" required>
+        <button type="submit">Add Trade</button>
+    </form>
+    <table id="tradeTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Asset</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tradeList"></tbody>
+    </table>
+    <div id="summary">
+        <h2>Summary</h2>
+        <p>Total Profit/Loss: <span id="totalPL">$0.00</span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
